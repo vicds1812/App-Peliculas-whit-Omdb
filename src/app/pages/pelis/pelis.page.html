@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Peliculas</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-searchbar [(ngModel)]="term" (ionChange)="searchChanged($event)">
+
+  </ion-searchbar>
+  <ion-item>
+    <ion-label>
+      Selecciona el tipo
+    </ion-label>
+    <ion-select [(ngModel)]="type" (ionChange)="searchChanged($event)">
+      <ion-select-option selected ="true" value="">All</ion-select-option>
+      <ion-select-option selected ="true" value="">Movies</ion-select-option>
+      <ion-select-option selected ="true" value="">Series</ion-select-option>
+      <ion-select-option selected ="true" value="">Episodios</ion-select-option>
+
+    </ion-select>
+  </ion-item>
+</ion-content>
