@@ -1,6 +1,6 @@
 export interface IPelis{
     Title:string;
-    Genero:string;
+    Genre:string;
     ImdbRating:string;
     Year:string;
     Director:string;

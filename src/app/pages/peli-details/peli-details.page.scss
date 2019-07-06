@@ -1,0 +1,15 @@
+.info-img{
+    
+    max-height: 70vh;
+    max-width: 50vh;
+    padding: 5px;
+    display: block;
+    margin: auto;
+    margin-bottom: 70px;
+}
+
+@media (max-width:800px){
+    .info-img{
+        max-height: 100%;
+    }
+}

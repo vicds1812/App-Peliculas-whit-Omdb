@@ -11,15 +11,15 @@ import { IPelis } from '../../model/iPelis.interface';
 })
 export class PelisPage implements OnInit {
   results: Observable<IPelis>;
-  term: string='';
-  type:string='';
+  term: string ='';
+  type: string ='';
   constructor(private peliService:PeliService) { }
 
   ngOnInit() {
   }
 
-  searchChanged(){
-    this.results=this.peliService.searchMovies(this.term, this.type);
+  searchChanged(): void {
+    this.results = this.peliService.searchMovies(this.term, this.type);
   }
 
 

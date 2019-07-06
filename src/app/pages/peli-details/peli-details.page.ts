@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { PeliService } from '../../services/peli.service';
+import { ActivatedRoute } from '@angular/router';
+import { from } from 'rxjs';
 
 @Component({
   selector: 'app-peli-details',
@@ -6,10 +9,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./peli-details.page.scss'],
 })
 export class PeliDetailsPage implements OnInit {
+  content: object= null;
 
-  constructor() { }
+  constructor(private peliService:PeliService, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
+    let id = this.activatedRoute.snapshot.paramMap.get('id');
+    this.peliService.getDetails(id).subscribe(result =>this.content = result);
+    
   }
 
 }

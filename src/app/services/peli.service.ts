@@ -8,17 +8,17 @@ import { IPelis } from '../model/iPelis.interface';
   providedIn: 'root'
 })
 export class PeliService {
-  private url:string='';
-  private apiKey:string='d949056c';
-  constructor(private http:HttpClient) { }
+  private url = '';
+  private apiKey = 'd949056c';
+  constructor(private http : HttpClient) { }
 
-  searchMovies(title:string,type:string){
-    this.url = `http://www.odmbapi.com/?s=${encodeURI(title)}&type=${type}&apikey=${this.apiKey}`;
+  searchMovies(title:string , type:string) {
+    this.url = `http://www.omdbapi.com/?s=${encodeURI(title)}&type=${type}&apikey=${this.apiKey}`;
     console.log(this.url);
     return this.http.get<IPelis>(this.url).pipe(map(results => results['Search']));
   }
 
   getDetails(id:string){
-    return this.http.get<IPelis>(`http://www.odmbapi.com/?i=${id}&plot=full&apikey=${this.apiKey}`);
+    return this.http.get<IPelis>(`http://www.omdbapi.com/?i=${id}&plot=full&apikey=${this.apiKey}`);
   }
 }
